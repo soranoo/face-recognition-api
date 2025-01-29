@@ -1,0 +1,12 @@
+[database]
+dbname = "facerec_db"
+user = "admin"
+password = "admin"
+host = "localhost"
+port = "5432"
+
+[paths]
+upload_dir = "data/uploads"
+
+[auth]
+token = "<your-own-bearer-token>"

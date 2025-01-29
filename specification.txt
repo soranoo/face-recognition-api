@@ -1,0 +1,75 @@
+user_id = group_id
+
+
+I want to build a facial recognition search engine which hopefully work like google photos, try to match unknown faces to known faces, if the unknown face can't match to existing facet then become a new group and request user to label it. For faces that have low confidence need user review.
+Auser that can represent by multiple or single face. The system need to support multi tendency.
+ let's do it with py and pg and deepface. got every operation I will give a tenant id as a minimal parameter.
+when insert the data I will give tenant id and an image(maybe with multiple faces) you have to extract the faces from it and do the goruping and you have to link the faces back to the original(for furtrue reference).
+and you have to generate a phash to each source image(you have to make a endpoint to able to get similar image id). notice that when the user require to delete an image and mean to remove all faces from that image
+
+All possible params:
+1. tenant id
+2. user id
+3. face id
+4. image id
+5. phash
+
+Endpoints:
+1. insert image
+- description: insert image and extract faces from it
+- params: tenant id, user id, image
+- return: image id
+2. delete image
+- description: delete image and remove all faces from it
+- params: tenant id, image id
+- return: None
+3. delete face
+- description: delete face from image
+- params: tenant id, face id
+- return: None
+4. delete user
+- description: delete user and remove all faces from it
+- params: tenant id, user id
+- return: None
+5. get review list
+- description: get list of faces that have low confidence
+- params: tenant id
+- return: list of face id
+6. get duplicate list
+- description: get list of images that have similar phash
+- params: tenant id, face id
+- return: list of image id
+7. update face owner
+- description: update face owner
+- params: tenant id, face id, to user id
+- return: None
+8. get face
+- description: get face info
+- params: tenant id, face id
+- return: face info (eg. user id, image id, emotion, age)
+9. get user
+- description: get user info
+- params: tenant id, user id
+- return: user info (eg. number of faces, number of images that the user face in)
+10. get image
+- description: get image info
+- params: tenant id, image id
+- return: image info (eg. face ids that associate with this image, user ids that associate with this image's faces, phash)
+11. get faces
+- description: get faces that associate with this image
+- params: tenant id, image id
+- return: list of face id (need to support pagination)
+12. get images
+- description: get images that associate with this user
+- params: tenant id, user id
+- return: list of image id (need to support pagination)
+13. delete tenant
+- description: delete tenant and remove all data associate with it
+- params: tenant id
+- return: None
+
+For the every db query or mutation you have to start a transaction.
+
+
+You have to write a setup script for setting up the database and the tables.
+You have to write a demo script for every endpoints and in a .ipynb file.

@@ -1,0 +1,10 @@
+config.toml
+start-env.py
+_dev.py
+**/.temp
+**/env
+**/logs
+**/data
+**/src/__pycache__
+*.pyc
+**/data
