@@ -84,7 +84,7 @@ pytz==2024.2
 PyWavelets==1.8.0
 pywin32==308
 pyzmq==26.2.0
-requests==2.32.3
+requests==2.32.4
 retina-face==0.0.17
 rich==13.9.4
 scipy==1.15.1
