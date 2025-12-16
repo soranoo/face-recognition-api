@@ -18,7 +18,7 @@ deepface==0.0.93
 Deprecated==1.2.18
 executing==2.2.0
 fastapi==0.115.7
-filelock==3.17.0
+filelock==3.20.1
 fire==0.7.0
 Flask==3.1.0
 Flask-Cors==6.0.0
