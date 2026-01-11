@@ -107,7 +107,7 @@ tqdm==4.67.1
 traitlets==5.14.3
 typing_extensions==4.12.2
 tzdata==2025.1
-urllib3==2.5.0
+urllib3==2.6.3
 uvicorn==0.34.0
 vecs==0.4.5
 wcwidth==0.2.13
