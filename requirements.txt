@@ -112,5 +112,5 @@ uvicorn==0.34.0
 vecs==0.4.5
 wcwidth==0.2.13
 Werkzeug==3.1.5
-wheel==0.45.1
+wheel==0.46.2
 wrapt==1.17.2
